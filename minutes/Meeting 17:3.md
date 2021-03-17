@@ -4,4 +4,3 @@
 _Vaneet K., Oscar G., Pol P., Braian M., Austin L._
 ### Minutes of the meeting:
 _Establiment de totes les infraestructures i preparació del llistat de requisits._
----
