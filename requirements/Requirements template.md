@@ -2,7 +2,7 @@
 ### ID: -- Identificador únic
 _Nom codificat amb un codi_
 ### Type/Category: -- Tipus i Subtipus
-_Tipus (obligatori) del requisit i Subtipus (opcional)
+_Tipus (obligatori) del requisit i Subtipus (opcional)_
 ### Version: -- Número de versió
 _Codi incremental de versió_
 ### Title: -- Nom del requisit
@@ -13,4 +13,3 @@ _Descripció textual del requisit_
 _Llista dels ID dels requisits relacionats_
 ### Comments: -- Comentaris
 _Comentaris addicionals que es vulguin afegir opcionalment_
----
