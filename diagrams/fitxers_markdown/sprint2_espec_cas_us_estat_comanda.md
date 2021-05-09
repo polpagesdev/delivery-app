@@ -45,9 +45,7 @@ A l'hora de recollir el paquet el transportista, allò que el client va seleccio
 -
 conditions
 --
-Llistat post
--
-condicions, podría estar buit si fos el cas
+Llistat post condicions, podría estar buit si fos el cas
 --
 -
 #### Comments
