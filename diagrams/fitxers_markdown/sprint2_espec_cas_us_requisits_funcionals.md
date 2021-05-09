@@ -32,22 +32,16 @@ Fluxos alternatius
 ---
 ##### Sub
 -
-Path 1
-##### Sub
--
+
 #### Exception Paths:
 --
 Excepcions que ens poguem trobar
 --
 #### Post conditions
--
 --
 Llistat post condicions, podría estar buit si fos el cas
 --
 -
-#### Comments
---
-Afegir comentari si fos el cas
 #### Comments
 --
 Afegir comentari si fos el cas

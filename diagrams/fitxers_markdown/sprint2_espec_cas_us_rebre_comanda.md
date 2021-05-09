@@ -41,7 +41,6 @@ Excepcions que ens poguem trobar
 --
 La comanda és rebuda, però es errònia. Haurà de demanar revisió.
 #### Post conditions
--
 --
 Llistat post condicions, podría estar buit si fos el cas
 --

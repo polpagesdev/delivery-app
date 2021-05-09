@@ -37,7 +37,6 @@ Excepcions que ens poguem trobar
 --
 Podria passar que la plataforma hagi d'arreglar massa errors i hagin de parar-la durant un temps. 
 #### Post conditions
--
 --
 Llistat post condicions, podría estar buit si fos el cas
 --

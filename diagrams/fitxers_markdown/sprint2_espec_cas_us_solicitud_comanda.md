@@ -39,15 +39,14 @@ Fluxos alternatius
 ##### Sub
 -
 Path 1
-3. Si el producte no hi ha stock</n>
-4. En paral·lel:</n>
-4.1. Informem al client de la falta de stock.</n>
-4.2. Preguntem si vol continuar amb la compra i li diem la data aproximada d’entrega</n>
-4.2.1.Esperem resposta</n>
-4.2.2.Enviem notificació a proveïdors</n>
+3. Si el producte no hi ha stock
+4. En paral·lel:
+1. Informem al client de la falta de stock.
+2. Preguntem si vol continuar amb la compra i li diem la data aproximada d’entrega
+3. Esperem resposta
+4. Enviem notificació a proveïdors
 
 #### Post conditions
--
 --
 Llistat post condicions, podría estar buit si fos el cas
 --
