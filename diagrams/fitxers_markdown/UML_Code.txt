@@ -1,0 +1,57 @@
+@startuml
+left to right direction
+
+' ***** Actors
+actor Desenvolupador
+actor Botiguer
+actor Transportista
+actor Dissenyador_Grafic
+actor Revisor_de_reembolso 
+actor Publicitarios 
+actor Bancos
+actor Mantenimiento
+actor GPS
+actor Servicios_de_Google
+actor Cliente
+
+
+' ***** Relació de generalització entre actors
+' ***** Actor1 <|-- Actor2
+
+' ***** Associació entre actors i casos d'ús. Els CU es declaren entre ()
+' ***** Actor1 --> (CasUs1)
+' ***** Actor2 --> (CasUs3)
+Cliente -- (Solicitud_de_pedido)
+Botiguer -- (Presentacion_de_ofertas)
+Cliente -- (Seleccion_de_pedido)
+Botiguer -- (Estado_del_pedido)
+GPS -- (Mapa)
+Cliente --> (Log_in)
+Botiguer --> (Log_in)
+Transportista --> (Log_in)
+Mantenimiento --> (Log_in)
+Servicios_de_Google -- (Registro)
+Publicitarios -- (Banner)
+Cliente --> (Recibir_pedido)
+Desenvolupador --> (Requisitos_funcionales)
+Bancos -- (Pago)
+Revisor_de_reembolso -- (Revision_de_pedido)
+Dissenyador_Grafic -- (Estilos)
+Mantenimiento -- (Mantenimiento_plataforma)
+' ***** Relació d'inclusió
+' ***** (CasUs1) --> (CasUs2) : <<include>>
+(Mapa) --> (Estado_del_pedido) : <<include>>
+(Registro) --> (Log_in) : <<include>>
+(Banner) --> (Seleccion_de_pedido) : <<include>>
+(Pago) --> (Solicitud_de_pedido) : <<include>>
+(Banner) --> (Presentacion_de_ofertas) : <<include>> 
+(Log_in) -- (Home_page)
+' ***** Relació d'extensió
+' ***** (CasUs3) <-- (CasUs4) : <<extend>>
+(Solicitud_de_pedido) <-- (Help) : <<extend>>
+(Requisitos_funcionales) <-- (Estilos) : <<extend>>
+(Recibir_pedido) <-- (Valoración) : <<extend>>
+(Recibir_pedido) <-- (Solicitar Revisión) : <<extend>>
+(Estado_del_pedido) <-- (Revision_de_pedido) : <<extend>>
+(Mantenimiento_plataforma) <-- (Gestion_tiquets) : <<extend>>
+@enduml
