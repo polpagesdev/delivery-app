@@ -39,13 +39,15 @@ Path 1
 --
 Excepcions que ens poguem trobar
 --
-#### Post
+#### Post conditions
 -
-conditions
 --
 Llistat post condicions, podría estar buit si fos el cas
 --
 -
+#### Comments
+--
+Afegir comentari si fos el cas
 #### Comments
 --
 Afegir comentari si fos el cas

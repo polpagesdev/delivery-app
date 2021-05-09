@@ -46,8 +46,12 @@ Fluxos alternatius
 Excepcions que ens poguem trobar
 --
 El què ha seleccionat el client ja no està disponible o fora d'stock. Haurà d'esperar a que hi hagi. 
-#### Llistat post condicions, podría estar buit si fos el cas
-
+#### Post conditions
+-
+--
+Llistat post condicions, podría estar buit si fos el cas
+--
+-
 #### Comments
 --
 Afegir comentari si fos el cas

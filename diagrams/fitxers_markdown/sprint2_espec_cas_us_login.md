@@ -38,13 +38,14 @@ Path 1
 Excepcions que ens poguem trobar
 --
 La plataforma pot estar inoperativa. Per tant, manteniment haurà d'arreglar-lo.
-#### Post
+#### Post conditions
 -
-conditions
 --
 Llistat post condicions, podría estar buit si fos el cas
 --
 -
 #### Comments
+--
+Afegir comentari si fos el cas
 --
 Afegir comentari si fos el cas

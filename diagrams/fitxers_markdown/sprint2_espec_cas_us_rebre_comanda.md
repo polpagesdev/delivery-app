@@ -40,12 +40,12 @@ Path 1
 Excepcions que ens poguem trobar
 --
 La comanda és rebuda, però es errònia. Haurà de demanar revisió.
-#### Post
+#### Post conditions
 -
-conditions
 --
 Llistat post condicions, podría estar buit si fos el cas
 --
 -
-3. ...
 #### Comments
+--
+Afegir comentari si fos el cas
