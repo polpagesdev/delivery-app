@@ -45,7 +45,7 @@ Path 1
 --
 Excepcions que ens poguem trobar
 --
- 
+El què ha seleccionat el client ja no està disponible o fora d'stock. Haurà d'esperar a que hi hagi. 
 #### Post
 -
 conditions

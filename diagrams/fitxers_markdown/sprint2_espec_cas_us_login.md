@@ -37,6 +37,7 @@ Path 1
 --
 Excepcions que ens poguem trobar
 --
+La plataforma pot estar inoperativa. Per tant, manteniment haurà d'arreglar-lo.
 #### Post
 -
 conditions

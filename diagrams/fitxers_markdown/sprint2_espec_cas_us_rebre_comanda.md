@@ -9,7 +9,7 @@ online
 #### Description
 L’usuari rep el producte a la ubicació seleccionada (ex: domicili)
 #### Actors
-Client
+Client, Revisor reemborsament
 #### Preconditions
 --
 Llistat precondicions, podría
@@ -39,6 +39,7 @@ Path 1
 ---
 Excepcions que ens poguem trobar
 --
+La comanda és rebuda, però es errònia. Haurà de demanar revisió.
 #### Post
 -
 conditions

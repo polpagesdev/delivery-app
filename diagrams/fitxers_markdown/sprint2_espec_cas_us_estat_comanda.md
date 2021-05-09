@@ -9,7 +9,7 @@ online
 #### Description
 Seguimiento del pedido desde la solicitud, pasando por la gestión, el envío y la entrega en la ubicación.
 #### Actors
-GPS,Botiguer,Revisor de pedido
+GPS,Botiguer,Revisor de pedido, Transportista
 #### Preconditions
 --
 Llistat precondicions, podría
@@ -40,6 +40,7 @@ Fluxos alternatius
 --
 Excepcions que ens poguem trobar
 --
+A l'hora de recollir el paquet el transportista, allò que el client va seleccionar es va esgotar a l'stock tant del magatzem com de la pròpia botiga (de la pròpia botiga podria ser just abans). Per tant, haurà de resol·licitar el què volia.
 #### Post
 -
 conditions

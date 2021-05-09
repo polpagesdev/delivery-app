@@ -38,7 +38,7 @@ Path 1
 --
 Excepcions que ens poguem trobar
 --
-<u>No es troben noves ofertes</u>
+<u>No es troben noves ofertes.</u>
 Les ofertes que estaven disponibles han caducat.
 Es mostren simplement les botigues més populars.
 #### Post
