@@ -22,7 +22,7 @@ estar buit si fos el cas
 --
 Flux principal del cas d ́ús enumerats
 --
-1. El Pernsonal de manteniment rep un tiquet d’incidència per part dels usuaris.
+1. El Personal de manteniment rep un tiquet d’incidència per part dels usuaris.
 2. **Extend CU** Gestion tiquets
 #### Alternative Paths:
 --
