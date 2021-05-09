@@ -40,9 +40,7 @@ Podria passar que la plataforma hagi d'arreglar massa errors i hagin de parar-la
 -
 conditions
 --
-Llistat post
--
-condicions, podría estar buit si fos el cas
+Llistat post condicions, podría estar buit si fos el cas
 --
 -
 #### Comments

@@ -44,9 +44,8 @@ La comanda és rebuda, però es errònia. Haurà de demanar revisió.
 -
 conditions
 --
-Llistat post
+Llistat post condicions, podría estar buit si fos el cas
+--
 -
-condicions, podría estar buit si fos el cas
- 
 3. ...
 #### Comments

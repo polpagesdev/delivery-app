@@ -45,12 +45,9 @@ Es mostren simplement les botigues més populars.
 -
 conditions
 --
-Llistat post
--
-condicions, podría estar buit si fos el cas
+Llistat post condicions, podría estar buit si fos el cas
 --
 -
- 
 #### Comments
 --
 Afegir comentari si fos el cas
