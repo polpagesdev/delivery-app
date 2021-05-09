@@ -30,7 +30,7 @@ Fluxos alternatius
 --
 ---
 ##### Sub
--
+
 Path 1
 3. Si el producte no esta en stock
 4. En paral·lel:
@@ -40,20 +40,16 @@ Path 1
 4.2.2. Esperem resposta
 4.2.3. Filtrem el que tinguin millor preu.
 4.2.4. Afegim el producte al nostre stock
----
+
 #### Exception Paths:
 --
 Excepcions que ens poguem trobar
 --
 El què ha seleccionat el client ja no està disponible o fora d'stock. Haurà d'esperar a que hi hagi. 
-#### Post
--
-conditions
---
-Llistat post
--
-condicions, podría estar buit si fos el cas
---
+#### Post conditions
+
+Llistat post condicions, podría estar buit si fos el cas
+
  
 #### Comments
 --
