@@ -31,15 +31,15 @@ Fluxos alternatius
 ---
 ##### Sub
 
-Path 1
+--
 3. Si el producte no esta en stock
 4. En paral·lel:
-4.1. Informem al client que la petició s'esta procesant.
-4.2. Busquem fabricants del producte
-4.2.1. Enviem notificació a proveïdors.
-4.2.2. Esperem resposta
-4.2.3. Filtrem el que tinguin millor preu.
-4.2.4. Afegim el producte al nostre stock
+1. Informem al client que la petició s'esta procesant.
+2. Busquem fabricants del producte
+3. Enviem notificació a proveïdors.
+4. Esperem resposta
+5. Filtrem el que tinguin millor preu.
+6. Afegim el producte al nostre stock
 
 #### Exception Paths:
 --
