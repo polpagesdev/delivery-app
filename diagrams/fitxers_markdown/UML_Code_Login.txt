@@ -1,0 +1,12 @@
+@startuml
+start 
+:Pàgina d'inici de sessió;
+:Inicia sessió;
+if (Registrat?) then (yes)
+:Login;
+else (no registrat)
+:Registrar-se;
+endif
+:Homepage;
+stop
+@enduml

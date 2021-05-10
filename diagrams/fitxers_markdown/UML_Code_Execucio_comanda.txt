@@ -1,0 +1,42 @@
+@startuml
+start
+:Programa l'aplicació;
+split
+:Manteniment aplicació;
+split again
+:Disseny UI;
+endsplit
+if (Prepara oferta) then (yes)
+:Dissenya Banner;
+:Presenta Oferta;
+else (oferta esgotada o no disponible)
+stop
+endif
+if (Sol·licitar comanda) then (yes)
+split
+-[#green,dashed]-> si és necessari;
+:Help;
+:Pagament;
+split again
+:Pagament;
+endsplit
+:Prepara Comandes;
+:Contacta Transport;
+:Rep Comandes;
+:Troba la ruta òptima al mapa;
+:Guia al transportista;
+:Entrega comanda;
+:Rep comanda;
+split
+-[#green,dashed]->
+:Valoració;
+split again
+-[#green,dashed]->
+:Sol. Revisió;
+:Revisió Comanda;
+endsplit
+else (no disponible)
+stop
+endif
+stop
+@enduml
