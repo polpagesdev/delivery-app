@@ -7,11 +7,11 @@ Integrants del projecte:
 - [Braian M.](https://github.com/braianmdo "Braian M.") (1497657)
 - [Austin L.](https://github.com/dIEMEUEF "Austin L.") (Scrum Master) (1565985)
 
-Scrum Masters: <\n>
--Sprint 1: Pol P.
--Sprint 2: Austin L.
--Sprint 3: ------
--Sprint 4: 
+Scrum Masters:  
+-Sprint 1: Pol P.  
+-Sprint 2: Austin L.  
+-Sprint 3: ------  
+-Sprint 4:
 
 Estructura del projecte:
 - [Documents](https://github.com/polpages1999/es2021uab/tree/main/documents "Documents")
