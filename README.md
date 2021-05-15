@@ -11,7 +11,7 @@ Scrum Masters:
 -Sprint 1: Pol P.  
 -Sprint 2: Austin L.  
 -Sprint 3: ------  
--Sprint 4:
+-Sprint 4: ------
 
 Estructura del projecte:
 - [Documents](https://github.com/polpages1999/es2021uab/tree/main/documents "Documents")
