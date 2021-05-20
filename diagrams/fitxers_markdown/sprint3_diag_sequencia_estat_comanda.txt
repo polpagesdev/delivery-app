@@ -1,0 +1,50 @@
+@startuml
+actor Client 
+actor Botiguer
+boundary estat_comanda 
+control control_estat 
+actor Transportista
+boundary mapa
+boundary control_mapa
+actor GPS
+actor Reemborsament 
+Client -> estat_comanda: peticio_estat_comanda_seleccionada()
+activate estat_comanda
+
+Botiguer -> estat_comanda: estat_preparació_comanda()
+alt Producte no disponible
+   estat_comanda -> Client: "Error: No es pot fer estat d'un producte no disponible"
+   estat_comanda -> Botiguer: "Error: No es pot preparar una comanda inexistent i/o no disponible"
+end  
+estat_comanda -> Client : Estat_preparat(c)
+estat_comanda -> Botiguer : Estat_preparat(p)
+deactivate estat_comanda
+activate control_estat
+
+Client -> control_estat: Estat_comanda(c)
+Botiguer -> control_estat: Estat_comanda(p)
+control_estat -> Transportista: enviament_comanda()
+control_estat -> Transportista: visualitzacio_estat()
+control_estat -> Botiguer: visualitzacio_estat()
+control_estat -> Client: visualtizacio_estat()
+Transportista --> control_estat: <<return>>
+control_estat -> Client: producte_rebut()
+
+Transportista -> mapa: solicita_ruta()
+mapa -> Transportista: troba_ruta()
+Transportista -> control_mapa: troba_ruta_optima()
+control_mapa -> GPS: busca_ruta_optima()
+GPS --> control_mapa: <<return>>
+control_mapa -> Transportista: ruta_optima()
+
+alt Comanda equivocada i/o defectuosa
+    Client -> control_estat: solicitud_reemborsament()
+    control_estat -> Reemborsament: comproba_producte()
+    alt Reemborsament concebut
+       Reemborsament -> control_estat: producte_reemborsat()
+       control_estat -> Client: entrega_producte_reemborsat()
+    else Reemborsament rebutjat
+       Reemborsament -> Client: "Ho sentim, el reemborsament ha sigut rebutjat"
+    end
+end
+@enduml

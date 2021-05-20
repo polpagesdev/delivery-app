@@ -1,0 +1,35 @@
+@startuml
+actor Client 
+actor Botiguer
+actor Publicitari
+boundary producte_preparat  
+control control_vendes 
+actor Transportista 
+Client -> producte_preparat : Selecciona_comanda()
+activate producte_preparat
+
+Botiguer -> producte_preparat: Oferta_preparada()
+Publicitari -> producte_preparat : Publicitat(O)
+producte_preparat -> Client : Presenta_oferta()
+deactivate producte_preparat
+activate control_vendes
+
+Client -> control_vendes : Selecciona_oferta(O)
+Client -> control_vendes : escollir_transportista()
+
+activate Transportista
+control_vendes -> Transportista : search_transportista()
+
+Transportista --> control_vendes : <<return>>
+deactivate Transportista
+deactivate control_vendes
+
+
+control_vendes -> control_vendes : agrega_comanda_transportista_escollit()
+alt No hi ha transportista
+   control_vendes -> Client : *Error: No hi ha transportistes disponibles*
+end
+loop No es vol transportista o No hi ha transportista
+   control_vendes -> control_vendes : agrega_comanda()
+end
+@enduml

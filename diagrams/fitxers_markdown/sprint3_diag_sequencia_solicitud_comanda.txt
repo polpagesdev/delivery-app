@@ -1,0 +1,27 @@
+@startuml
+actor Client 
+boundary solicitud_comanda  
+control control_comanda 
+actor Botiguer
+actor Banc
+Client -> solicitud_comanda : solicita_comanda()
+activate solicitud_comanda
+
+Banc -> Client: concedeix_pagament()
+alt No hi ha suficients diners
+   solicitud_comanda -> Client : "Error: No hi ha suficients diners pel pagament".
+end
+solicitud_comanda -> Client : Coincideix_solicitud()
+deactivate solicitud_comanda
+activate control_comanda
+Client -> control_comanda: comanda_solicitada(s)
+loop Solicita més d'una comanda
+   control_comanda -> control_comanda: agrega_solicitud()
+end
+control_comanda -> Botiguer: Prepara_comanda()
+alt Comanda no disponible
+    control_comanda -> Client: "Error: No hi ha stock per la comanda solicitada"
+end
+Botiguer --> control_comanda: <<return>>
+control_comanda -> Client: coincideix_comanda()
+@enduml
