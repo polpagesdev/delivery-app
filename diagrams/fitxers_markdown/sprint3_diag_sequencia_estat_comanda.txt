@@ -19,32 +19,48 @@ end
 estat_comanda -> Client : Estat_preparat(c)
 estat_comanda -> Botiguer : Estat_preparat(p)
 deactivate estat_comanda
-activate control_estat
 
 Client -> control_estat: Estat_comanda(c)
+activate control_estat
 Botiguer -> control_estat: Estat_comanda(p)
 control_estat -> Transportista: enviament_comanda()
+activate Transportista
 control_estat -> Transportista: visualitzacio_estat()
+Transportista --> control_estat: <<return>>
+deactivate Transportista
 control_estat -> Botiguer: visualitzacio_estat()
 control_estat -> Client: visualtizacio_estat()
-Transportista --> control_estat: <<return>>
 control_estat -> Client: producte_rebut()
+deactivate control_estat
 
 Transportista -> mapa: solicita_ruta()
+activate mapa
 mapa -> Transportista: troba_ruta()
+deactivate mapa
 Transportista -> control_mapa: troba_ruta_optima()
+
+
+activate control_mapa
 control_mapa -> GPS: busca_ruta_optima()
+activate GPS
 GPS --> control_mapa: <<return>>
+deactivate GPS
 control_mapa -> Transportista: ruta_optima()
+deactivate control_mapa
 
 alt Comanda equivocada i/o defectuosa
     Client -> control_estat: solicitud_reemborsament()
+    activate control_estat
     control_estat -> Reemborsament: comproba_producte()
     alt Reemborsament concebut
        Reemborsament -> control_estat: producte_reemborsat()
        control_estat -> Client: entrega_producte_reemborsat()
+    deactivate control_estat
     else Reemborsament rebutjat
        Reemborsament -> Client: "Ho sentim, el reemborsament ha sigut rebutjat"
     end
+end
+alt Vol valorar?
+   Client --> control_estat: envia_valoracio()
 end
 @enduml

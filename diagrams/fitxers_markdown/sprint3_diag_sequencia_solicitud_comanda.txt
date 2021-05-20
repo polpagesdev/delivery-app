@@ -11,17 +11,26 @@ Banc -> Client: concedeix_pagament()
 alt No hi ha suficients diners
    solicitud_comanda -> Client : "Error: No hi ha suficients diners pel pagament".
 end
+alt Necessita ajuda
+   solicitud_comanda --> Client: Help()
+end
 solicitud_comanda -> Client : Coincideix_solicitud()
 deactivate solicitud_comanda
-activate control_comanda
 Client -> control_comanda: comanda_solicitada(s)
+
+
+activate control_comanda
+control_comanda -> Botiguer: Prepara_comanda()
+activate Botiguer
+Botiguer --> control_comanda: <<return>>
+deactivate Botiguer
+
 loop Solicita més d'una comanda
    control_comanda -> control_comanda: agrega_solicitud()
 end
-control_comanda -> Botiguer: Prepara_comanda()
 alt Comanda no disponible
     control_comanda -> Client: "Error: No hi ha stock per la comanda solicitada"
 end
-Botiguer --> control_comanda: <<return>>
 control_comanda -> Client: coincideix_comanda()
+deactivate control_comanda
 @enduml

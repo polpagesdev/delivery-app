@@ -11,12 +11,17 @@ alt No hi ha stock per l'oferta
 end
 oferta_preparada -> Botiguer : oferta_preparada(s)
 deactivate oferta_preparada
-activate control_oferta
+
 Botiguer -> control_oferta: oferta_presentada()
+
+activate control_oferta
 control_oferta -> Publicitari: crea_banner()
+activate Publicitari
 Publicitari --> control_oferta: <<return>>
+deactivate Publicitari
 alt Oferta esgotada en el mateix moment d'haver-la acceptat
     control_oferta -> Botiguer: "Error: Oferta esgotada"
 end
 control_oferta -> Botiguer: Oferta_llesta()
+deactivate control_oferta
 @enduml
