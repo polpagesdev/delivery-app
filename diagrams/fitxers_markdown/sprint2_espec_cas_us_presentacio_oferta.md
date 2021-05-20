@@ -18,8 +18,8 @@ estar buit si fos el cas
 1. Els Botiguers han preparat noves ofertes
 2. Els publicitaris han dissenyat els banners amb les ofertes
 3. L'usuari està a la pagina de productes
- 
- 
+
+
 #### Main Pipeline :
 --
 Flux principal del cas d ́ús enumerats

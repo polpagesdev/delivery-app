@@ -5,7 +5,13 @@ Integrants del projecte:
 - [Oscar G.](https://github.com/ogarsan "Oscar G.") (1528540)
 - [Pol P.](https://github.com/polpages1999 "Pol P.") (1494769)
 - [Braian M.](https://github.com/braianmdo "Braian M.") (1497657)
-- [Austin L.](https://github.com/dIEMEUEF "Austin L.") (Scrum Master) (1565985)
+- [Austin L.](https://github.com/dIEMEUEF "Austin L.") (1565985)
+
+Scrum Masters:  
+-Sprint 1: Pol P.  
+-Sprint 2: Austin L.  
+-Sprint 3: ------  
+-Sprint 4: ------
 
 Estructura del projecte:
 - [Documents](https://github.com/polpages1999/es2021uab/tree/main/documents "Documents")

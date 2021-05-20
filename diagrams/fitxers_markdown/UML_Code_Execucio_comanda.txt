@@ -1,13 +1,6 @@
 @startuml
 start
-:Programa l'aplicació;
-split
-:Manteniment aplicació;
-split again
-:Disseny UI;
-endsplit
 if (Prepara oferta) then (yes)
-:Dissenya Banner;
 :Presenta Oferta;
 else (oferta esgotada o no disponible)
 stop

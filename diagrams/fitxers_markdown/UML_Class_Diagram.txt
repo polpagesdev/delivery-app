@@ -1,0 +1,101 @@
+@startuml
+'--------------------------------------------------------------------
+' DIAGRAMA DE CLASSES
+'--------------------------------------------------------------------
+
+
+
+' ***** Declaració d'una classe
+class Usuari{
+ID
+Nom
+Password
+Direccio
+}
+class Client {
+ConsultarEstatComanda()
+AfegirValoracio()
+}
+
+class Botiguer{
+NIF
+NomBotiga
+}
+
+class Banc{
+MetodePagament
+FerTransaccio()
+}
+
+class Transportista{
+Nom
+NIF
+}
+
+Class Comanda{
+ID
+Estat
+}
+
+Class Productes{
+Nom
+Stock
+Preu
+}
+Class GPS{
+Ruta
+LatitudActual
+LongitudActual
+}
+
+Class LineaComanda{
+PreuTotal
+QuantitatProductes
+Data
+bool Pagat
+}
+
+Class Entrega{
+Valoracio
+}
+
+Class Publicitat
+{
+Banner
+}
+
+' ***** Relació de generalització
+Usuari <|-- Client
+Usuari<|-- Botiguer
+Productes <|-- Publicitat
+
+' ***** Relació d'associació
+'Classe1 "1..*" -- "1..*" Classe2 : nom_associació (opcional)
+Client "1" -- "0..*" Comanda
+Productes"1..*" -- "1..*" LineaComanda
+Productes"1" -- "1..*" Botiguer
+Banc"1" -- "1..*"LineaComanda
+Entrega"1" -- "1..*"Comanda
+Entrega"1..*"--"1"Transportista
+GPS"1..*"--"0"Transportista
+GPS"1..*"--"1"Comanda
+' ***** Si es vol forçar que l'associació vagi cap a la dreta, posar "right" enmig
+'Classe1 "1..*" -right- "1..*" Classe2 : associació
+
+' ***** Relació d'agragació
+'Classe2 "1..*" o-- "0..*" Classe3
+
+' ***** Relació de composició
+'Classe3 "1" *-- "1..*" Classe4
+Comanda"1" *-- "1..*" LineaComanda
+
+' ***** Relació d'associació
+'Classe4 "1..*" -right- "1..*" Classe5
+
+' ***** Classe associació
+'(Classe4,Classe5) .. ClasseAssociació
+
+
+'--------------------------------------------------------------------
+'--------------------------------------------------------------------
+@enduml
