@@ -18,6 +18,8 @@ Estructura del projecte:
 - [Requirements](https://github.com/polpages1999/es2021uab/tree/main/requirements "Requirements")
 - [Minutes](https://github.com/polpages1999/es2021uab/tree/main/minutes "Minutes")
 - [Diagrams](https://github.com/polpages1999/es2021uab/tree/main/diagrams "Diagrams")
+  - [Especificacions Casos d'Ús](https://github.com/polpages1999/es2021uab/tree/main/diagrams/use_case_specs "Espec. Casos d'Ús")
 - [Source Code](https://github.com/polpages1999/es2021uab/tree/main/src "Source Code")
+- [Others](https://github.com/polpages1999/es2021uab/tree/main/others "Others")
 
 [Projecte d'Azure DevOps](https://dev.azure.com/UAB-EngSw-432-4/UAB-ES-432-04 "Projecte Azure")
