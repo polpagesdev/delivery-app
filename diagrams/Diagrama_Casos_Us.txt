@@ -29,7 +29,7 @@ Botiguer --> (Log_in)
 Transportista --> (Log_in)
 Servicios_de_Google -- (Registro)
 Publicitarios -- (Banner)
-Cliente --> (Recibir_pedido)
+Cliente -- (Recibir_pedido)
 Bancos -- (Pago)
 Revisor_de_reembolso -- (Revision_de_pedido)
 ' ***** Relació d'inclusió
