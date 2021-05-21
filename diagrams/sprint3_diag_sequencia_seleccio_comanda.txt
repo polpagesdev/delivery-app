@@ -12,23 +12,22 @@ Botiguer -> producte_preparat: Oferta_preparada()
 Publicitari -> producte_preparat : Publicitat(O)
 producte_preparat -> Client : Presenta_oferta()
 deactivate producte_preparat
+activate control_vendes
 
 Client -> control_vendes : Selecciona_oferta(O)
-activate control_vendes
 Client -> control_vendes : escollir_transportista()
 
-
-control_vendes -> Transportista : search_transportista()
 activate Transportista
+control_vendes -> Transportista : search_transportista()
+
 Transportista --> control_vendes : <<return>>
 deactivate Transportista
-control_vendes -> Client: comanda_acceptada()
 deactivate control_vendes
 
 
 control_vendes -> control_vendes : agrega_comanda_transportista_escollit()
 alt No hi ha transportista
-   control_vendes -> Client : "Error: No hi ha transportistes disponibles"
+   control_vendes -> Client : *Error: No hi ha transportistes disponibles*
 end
 loop No es vol transportista o No hi ha transportista
    control_vendes -> control_vendes : agrega_comanda()
