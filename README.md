@@ -10,7 +10,7 @@ Integrants del projecte:
 Scrum Masters:  
 -Sprint 1: Pol P.  
 -Sprint 2: Austin L.  
--Sprint 3: ------  
+-Sprint 3: Braian M. 
 -Sprint 4: ------
 
 Estructura del projecte:
