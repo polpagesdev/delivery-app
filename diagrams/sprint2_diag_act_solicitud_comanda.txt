@@ -1,0 +1,38 @@
+@startuml
+'SOLICITUD COMANDA'
+|#Application|Client|
+start
+:Solicita la comanda que desitja;
+|#Orange|Banc|
+:Concedeix el pagament al client;
+|#Red|Sistema|
+if (Client necessita ajuda extra) then (yes)
+   -[#black,dotted]->
+   |Client|
+   :Help;
+endif
+|Sistema|
+if (Hi ha suficients diners) then (yes)
+  :Es concedeix la solicitud;
+  |Client|
+  :El client envia la comanda solicitada;
+  |Sistema|
+  :El sistema indica al botiguer que prepari la comanda;
+  if (Hi ha stock de la comanda) then (yes)
+    while (Client vulgui més solicituds)
+      :Solicituds s'agreguen;
+    endwhile
+    |#Green|Botiguer|
+    :Prepara la comanda indicada pel sistema;
+  stop
+  else (no)
+     |Sistema|
+     :"Error: No hi ha stock per la comanda solicitada";
+     stop
+endif
+else (no)
+ |Sistema|
+ :"Error: No hi ha diners per pagar";
+ stop
+endif
+@enduml

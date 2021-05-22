@@ -14,7 +14,7 @@ end
 alt Necessita ajuda
    solicitud_comanda --> Client: Help()
 end
-solicitud_comanda -> Client : Coincideix_solicitud()
+solicitud_comanda -> Client : Concedeix_solicitud()
 deactivate solicitud_comanda
 Client -> control_comanda: comanda_solicitada(s)
 
@@ -31,6 +31,6 @@ end
 alt Comanda no disponible
     control_comanda -> Client: "Error: No hi ha stock per la comanda solicitada"
 end
-control_comanda -> Client: coincideix_comanda()
+control_comanda -> Client: concedeix_comanda()
 deactivate control_comanda
 @enduml

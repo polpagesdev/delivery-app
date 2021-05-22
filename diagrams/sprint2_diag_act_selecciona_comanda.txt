@@ -1,0 +1,30 @@
+@startuml
+'SELECCIONA COMANDA'
+|#Application|Client|
+start
+:Selecciona la comanda que vol;
+|#Red|Sistema|
+:El sistema prepara la oferta que vol presentar al client;
+|#Orange|Publicitari|
+:Crea el banner per la oferta;
+|Sistema|
+:El sistema, per part del botiguer, presenta la oferta al client;
+|Client|
+:El client selecciona la oferta presentada pel sistema;
+  while (Vulgui més comandes)
+  :Agrega comandes;
+  endwhile
+if(Si vol enviament a casa) then (yes)
+  :El client selecciona que un transportista li porti la comanda;
+  |Sistema|
+  :Transportista és encomanat pel sistema;
+  |#Green|Transportista|
+  :El transportista accepta i envia la comanda al client;
+  stop
+else (no)
+  |Sistema|
+  :Botiguer guarda la comanda, indicat pel sistema;
+  stop
+
+endif
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+'ESTAT COMANDA'
+|#Application|Client|
+start
+split
+:Demana estat comanda;
+split again
+|#Orange|Botiguer|
+:Demana estat comanda client;
+end split
+|#Red|Sistema|
+if (Comanda existent) then (no)
+   :No es pot fer estat d'una comanda no existent;
+   stop
+else (yes)
+   :Es prepara l'estat de la comanda;
+   |#Green|Transportista|
+   :Prepara enviament;
+   |#Yellow|GPS|
+   :Busca ruta òptima;
+   |Transportista|
+   :Envia la comanda;
+   |Client|
+   :Rep la comanda;
+endif
+|Client|
+if (Comanda defectuosa o equivocada) then (no)
+stop
+else (yes)
+   :Solicita un reemborsament;
+   |#Purple|Reemborsament|
+   if (Reemborsament acceptat) then (yes)
+   |Client|
+   :Concedeix reemborsament i envia la comanda correcte;
+   stop
+   else (no)
+    |Reemborsament|
+    :"Reemborsament rebutjat";
+    stop
+   endif
+endif
+@enduml
