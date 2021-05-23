@@ -11,41 +11,73 @@ ID
 Nom
 Password
 Direccio
+Telefon
+Mail
+Registre()
+Login()
 }
+
 class Client {
+HistorialComandes
+ValoracionsFetes
 ConsultarEstatComanda()
 AfegirValoracio()
+RebreEntrega()
+SolicitarDevolucio()
 }
 
 class Botiguer{
 NIF
 NomBotiga
+AfegirOferta()
+AfegirProductes()
+TreureProductes()
+ContactarTransportista()
+}
+
+class Revisor{
+TotalRevisions
+Revisats
+Pendents
+RevisarProducte()
+RevisarValoracio()
 }
 
 class Banc{
 MetodePagament
+Ajuda()
 FerTransaccio()
 }
 
 class Transportista{
 Nom
 NIF
+bool Ocupat
+IniciarEntrega()
+ActivarGPS()
+friend Registre()
+friend Login()
 }
 
 Class Comanda{
 ID
 Estat
+Valoracio
 }
 
 Class Productes{
 Nom
 Stock
 Preu
+ProductesOferta
+AcitvarOfertaProducte()
 }
+
 Class GPS{
 Ruta
 LatitudActual
 LongitudActual
+CalcularRuta()
 }
 
 Class LineaComanda{
@@ -53,21 +85,29 @@ PreuTotal
 QuantitatProductes
 Data
 bool Pagat
+AplicarOferta()
+GenerarTicket()
 }
 
 Class Entrega{
-Valoracio
+NumEntregues
+Pendents
+Entregats
+Kilometres
+EntregaComanda()
 }
 
 Class Publicitat
 {
-Banner
+
+Banner()
+SeleccioProductes()
 }
 
 ' ***** Relació de generalització
 Usuari <|-- Client
 Usuari<|-- Botiguer
-Productes <|-- Publicitat
+
 
 ' ***** Relació d'associació
 'Classe1 "1..*" -- "1..*" Classe2 : nom_associació (opcional)
@@ -76,9 +116,11 @@ Productes"1..*" -- "1..*" LineaComanda
 Productes"1" -- "1..*" Botiguer
 Banc"1" -- "1..*"LineaComanda
 Entrega"1" -- "1..*"Comanda
-Entrega"1..*"--"1"Transportista
-GPS"1..*"--"0"Transportista
-GPS"1..*"--"1"Comanda
+'Entrega"1..*"--"1"Transportista
+'GPS"1*"--"1"Transportista
+Revisor"1"--"1"Comanda
+'GPS"1"--"1"Entrega
+
 ' ***** Si es vol forçar que l'associació vagi cap a la dreta, posar "right" enmig
 'Classe1 "1..*" -right- "1..*" Classe2 : associació
 
@@ -88,12 +130,13 @@ GPS"1..*"--"1"Comanda
 ' ***** Relació de composició
 'Classe3 "1" *-- "1..*" Classe4
 Comanda"1" *-- "1..*" LineaComanda
+Productes"1..*"--*"1..*" Publicitat
 
 ' ***** Relació d'associació
 'Classe4 "1..*" -right- "1..*" Classe5
 
 ' ***** Classe associació
-'(Classe4,Classe5) .. ClasseAssociació
+(GPS,Transportista) .. Entrega
 
 
 '--------------------------------------------------------------------
