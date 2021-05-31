@@ -5,10 +5,13 @@ control control_oferta
 actor Publicitari
 Botiguer -> oferta_preparada : solicita_oferta()
 activate oferta_preparada
-
+oferta_preparada -> control_oferta: solicita_oferta_per_preparar()
+activate control_oferta
 alt No hi ha stock per l'oferta
-   oferta_preparada -> Botiguer : "Error: No hi ha stock per la oferta que solicita"
+   control_oferta -> Botiguer : "Error: No hi ha stock per la oferta que solicita"
 end
+control_oferta --> oferta_preparada: <<return>>
+deactivate control_oferta
 oferta_preparada -> Botiguer : oferta_preparada(s)
 deactivate oferta_preparada
 

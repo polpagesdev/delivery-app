@@ -1,15 +1,25 @@
 @startuml
 actor Client 
-actor Botiguer
-actor Publicitari
 boundary producte_preparat  
 control control_vendes 
-actor Transportista 
+actor Botiguer
+actor Publicitari
+entity Transportista 
+
 Client -> producte_preparat : Selecciona_comanda()
 activate producte_preparat
+control_vendes -> Botiguer: oferta_a_demanar()
+activate control_vendes
+activate Botiguer
+Botiguer -> Publicitari: Banner_demanat()
+activate Publicitari
+Publicitari --> Botiguer: <<return>>
+deactivate Publicitari
+Botiguer -> control_vendes: oferta_preparada()
+deactivate Botiguer
+control_vendes -> producte_preparat: oferta_a_presentar()
+deactivate control_vendes
 
-Botiguer -> producte_preparat: Oferta_preparada()
-Publicitari -> producte_preparat : Publicitat(O)
 producte_preparat -> Client : Presenta_oferta()
 deactivate producte_preparat
 

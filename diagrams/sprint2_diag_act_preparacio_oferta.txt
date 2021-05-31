@@ -1,9 +1,9 @@
 @startuml
 'PREPARACIO OFERTA'
-|#Application|Botiguer|
+|Botiguer|
 start
 :El botiguer solicita la oferta;
-|#Red|Sistema|
+|.|
 if(Hi ha stock) then (yes)
   :Es prepara la oferta;
 else (no)
@@ -11,16 +11,16 @@ else (no)
 stop
 endif
 :La oferta preparada es presenta;
-|#Orange|Publicitari|
+|Publicitari|
 :El publicitari crea un banner per a la oferta;
-|Sistema|
+|.|
 if(La oferta està activa per ser presentada) then (yes)
   :La oferta está llesta per ser presentada al client;
   |Botiguer|
   :La oferta és concebuda al Botiguer;
 stop
 else (no)
-  |Sistema|
+  |.|
   :La oferta ha expirat o ja no està disponible en el mateix moment, i, per tant, no es presenta;
 stop
 endif

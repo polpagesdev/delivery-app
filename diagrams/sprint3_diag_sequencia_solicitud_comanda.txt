@@ -2,18 +2,21 @@
 actor Client 
 boundary solicitud_comanda  
 control control_comanda 
-actor Botiguer
+entity Botiguer
 actor Banc
 Client -> solicitud_comanda : solicita_comanda()
 activate solicitud_comanda
-
-Banc -> Client: concedeix_pagament()
+solicitud_comanda -> control_comanda: comanda_solicitada()
+activate control_comanda
 alt No hi ha suficients diners
-   solicitud_comanda -> Client : "Error: No hi ha suficients diners pel pagament".
+   control_comanda -> Client : "Error: No hi ha suficients diners pel pagament".
 end
 alt Necessita ajuda
-   solicitud_comanda --> Client: Help()
+   control_comanda --> Client: Help()
 end
+control_comanda --> solicitud_comanda: <<return>>
+deactivate control_comanda
+Banc -> solicitud_comanda: concedeix_pagament()
 solicitud_comanda -> Client : Concedeix_solicitud()
 deactivate solicitud_comanda
 Client -> control_comanda: comanda_solicitada(s)

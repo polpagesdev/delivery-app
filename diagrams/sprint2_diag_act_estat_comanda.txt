@@ -1,22 +1,22 @@
 @startuml
 'ESTAT COMANDA'
-|#Application|Client|
+|Client|
 start
 split
 :Demana estat comanda;
 split again
-|#Orange|Botiguer|
+|Botiguer|
 :Demana estat comanda client;
 end split
-|#Red|Sistema|
+|.|
 if (Comanda existent) then (no)
    :No es pot fer estat d'una comanda no existent;
    stop
 else (yes)
    :Es prepara l'estat de la comanda;
-   |#Green|Transportista|
+   |Transportista|
    :Prepara enviament;
-   |#Yellow|GPS|
+   |GPS|
    :Busca ruta òptima;
    |Transportista|
    :Envia la comanda;
@@ -28,7 +28,7 @@ if (Comanda defectuosa o equivocada) then (no)
 stop
 else (yes)
    :Solicita un reemborsament;
-   |#Purple|Reemborsament|
+   |Reemborsament|
    if (Reemborsament acceptat) then (yes)
    |Client|
    :Concedeix reemborsament i envia la comanda correcte;
