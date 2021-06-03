@@ -20,13 +20,8 @@ class AuthUser:
         else:
             return 'AuthURL'
 
-    def connect(self, authorization_code: str) -> bool:
+    def connect(self, authorization_code: str, client_id: str) -> bool:
+        client_token = request_authentication(client_id, 'secret', authorization_code, 'CallbackURL')
 
-        #
-        # Use oauth2 service to check if the identity is authenticated and the authorization grant is valid.
-        # Remember to keep the access_token
-
-        #
-        # call db methods to get user data
 
         return True
