@@ -1,0 +1,27 @@
+@startuml
+'PRESENTACIO OFERTA'
+|Botiguer|
+start
+:El botiguer solicita la oferta;
+|.|
+if(Hi ha stock) then (yes)
+  :Es prepara la oferta;
+else (no)
+  :No es crea cap oferta i, per tant, no hi ha oferta nova;
+stop
+endif
+:La oferta preparada es presenta;
+|Publicitari|
+:El publicitari crea un banner per a la oferta;
+|.|
+if(La oferta està activa per ser presentada) then (yes)
+  :La oferta está llesta per ser presentada al client;
+  |Botiguer|
+  :La oferta és concebuda al Botiguer;
+stop
+else (no)
+  |.|
+  :La oferta ha expirat o ja no està disponible en el mateix moment, i, per tant, no es presenta;
+stop
+endif
+@enduml
