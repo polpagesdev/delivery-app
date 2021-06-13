@@ -6,6 +6,34 @@
 
 
 ' ***** Declaració d'una classe
+
+package Persones <<Folder>>{
+class Usuari
+class Client
+class Botiguer
+class Transportista
+}
+
+package Pagament <<Folder>>{
+class Banc
+class LineaComanda
+}
+
+package EstatComanda <<Folder>>{
+class GPS
+class Entrega
+}
+
+package CompraVenda <<Folder>>{
+class Comanda
+class Productes
+class Publicitat
+}
+
+package Revisio <<Folder>>{
+class Revisor
+}
+
 class Usuari{
 ID
 Nom
@@ -20,6 +48,7 @@ Login()
 class Client {
 HistorialComandes
 ValoracionsFetes
+SolicitarComanda()
 ConsultarEstatComanda()
 AfegirValoracio()
 RebreEntrega()
@@ -63,6 +92,7 @@ Class Comanda{
 ID
 Estat
 Valoracio
+Finalitzar()
 }
 
 Class Productes{
@@ -99,8 +129,8 @@ EntregaComanda()
 
 Class Publicitat
 {
-
-Banner()
+TotalProductes
+MostrarBanner()
 SeleccioProductes()
 }
 
@@ -113,13 +143,15 @@ Usuari<|-- Botiguer
 'Classe1 "1..*" -- "1..*" Classe2 : nom_associació (opcional)
 Client "1" -- "0..*" Comanda
 Productes"1..*" -- "1..*" LineaComanda
-Productes"1" -- "1..*" Botiguer
+Productes"1..*" -- "1..*" Botiguer
 Banc"1" -- "1..*"LineaComanda
 Entrega"1" -- "1..*"Comanda
 'Entrega"1..*"--"1"Transportista
 'GPS"1*"--"1"Transportista
-Revisor"1"--"1"Comanda
+Revisor"1"--"0..*"Comanda
 'GPS"1"--"1"Entrega
+
+
 
 ' ***** Si es vol forçar que l'associació vagi cap a la dreta, posar "right" enmig
 'Classe1 "1..*" -right- "1..*" Classe2 : associació
